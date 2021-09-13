@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Web3Provider } from '@ethersproject/providers'
+import { Web3ReactProvider } from '@web3-react/core'
+import Main from './components/Main'
+import { StylesProvider } from '@material-ui/core/styles'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function getLibrary(provider: any): Web3Provider {
+    return new Web3Provider(provider)
 }
 
-export default App;
+export default function App() {
+    return (
+        <Web3ReactProvider getLibrary={getLibrary}>
+            <StylesProvider injectFirst>
+                <Main />
+            </StylesProvider>
+        </Web3ReactProvider>
+    )
+}

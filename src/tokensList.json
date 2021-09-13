@@ -1,0 +1,52 @@
+{
+    "name": "Minimalistic Token List",
+    "version": {
+        "major": 1,
+        "minor": 1,
+        "patch": 2
+    },
+    "tags": {},
+    "keywords": ["minimalistic"],
+    "tokens": [
+        {
+            "name": "Matic",
+            "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+            "symbol": "MATIC",
+            "decimals": 18,
+            "chainId": 137,
+            "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0/logo.png"
+        },
+        {
+            "name": "Aave",
+            "address": "0xD6DF932A45C0f255f85145f286eA0b292B21C90B",
+            "symbol": "AAVE",
+            "decimals": 18,
+            "chainId": 137,
+            "logoURI": "https://etherscan.io/token/images/aave_32.png"
+        },
+        {
+            "name": "Dai Stablecoin",
+            "address": "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063",
+            "symbol": "DAI",
+            "decimals": 18,
+            "chainId": 137,
+            "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png"
+        },
+        {
+            "name": "decentral.games",
+            "address": "0x2a93172c8DCCbfBC60a39d56183B7279a2F647b4",
+            "symbol": "$DG",
+            "decimals": 18,
+            "chainId": 137,
+            "logoURI": "https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/dg.jpg"
+        },
+        {
+            "name": "Ether",
+            "address": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
+            "symbol": "ETH",
+            "decimals": 18,
+            "chainId": 137,
+            "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png"
+        }
+    ]
+}
