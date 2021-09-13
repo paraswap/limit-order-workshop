@@ -21,20 +21,7 @@ const useMarketRate = (
     useEffect(() => {
         const fetchRate = async () => {
             if (!srcAmount) return
-
-            const paraSwap = new ParaSwap(137)
-            const priceRoute = await paraSwap.getRate(
-                srcToken,
-                destToken,
-                new BigNumber(srcAmount).multipliedBy(10 ** 18).toString()
-            )
-
-            if ('message' in priceRoute) return
-            const marketRate = new BigNumber(priceRoute.destAmount).div(
-                priceRoute.srcAmount
-            )
-
-            setRate(marketRate.toFixed(5))
+            // TODO: grab rate from Paraswap and compute destAmount / srcAmount rate and set it
         }
 
         fetchRate()
@@ -73,7 +60,6 @@ const useOnSubmitOrder = (
             outputMinReturn // minimum amount received
         )
 
-        console.log('>>>tx', tx)
     }
 }
 
@@ -131,19 +117,14 @@ export default function LimitOrder() {
         '0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063'
     )
     const [desiredRate, setDesiredRate] = useState<string>()
-    const marketRate = useMarketRate(srcTokenAddress, destTokenAddress, amount)
+    const marketRate = undefined // TODO grab market rate from paraSwap
     const rate = desiredRate ?? marketRate
 
     const minReturn = !amount || !rate ? undefined : String(+amount * +rate)
 
-    const onLimitOrder = useOnSubmitOrder(
-        srcTokenAddress,
-        destTokenAddress,
-        amount,
-        minReturn
-    )
+    const onLimitOrder = undefined // TODO: grab submit callback
 
-    const { account } = useWeb3React()
+    const account = undefined // TODO: get your public address from metamask
 
     return (
         <Box width={400} justifyContent="center">
@@ -170,7 +151,7 @@ export default function LimitOrder() {
                 color="secondary"
                 fullWidth
                 onClick={onLimitOrder}
-                disabled={!account}
+                disabled={false} // TODO: disable subbmit button if: account not connected, balance is isufficient
             >
                 Submit sell order
             </Button>

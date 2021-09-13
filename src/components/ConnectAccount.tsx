@@ -33,7 +33,11 @@ export default function ConnectAccount() {
     return (
         <Box justifyContent="center" alignItems="center" width={200}>
             {!account ? (
-                <StyledButton onClick={() => activate(injected)}>
+                <StyledButton
+                    onClick={() => {
+                        // TODO : activate the injected provider
+                    }}
+                >
                     Connect to MetaMask
                 </StyledButton>
             ) : (
